@@ -1,5 +1,17 @@
-/* Dark Blue Nord Theme for Portainer
+/* ==UserStyle==
+@name         Portainer Nord Dark Theme
+@description  Dark Blue Nord Theme for Portainer
+@namespace    github.com/STaRDoGG/portainer-nord-dark-theme
+@homepageURL  https://github.com/STaRDoGG/portainer-nord-dark-theme
+@supportURL   https://github.com/STaRDoGG/portainer-nord-dark-theme/issues
+@updateURL    https://raw.githubusercontent.com/STaRDoGG/portainer-nord-dark-theme/master/style.css
+@author       STaRDoGG
+@version      0.0.1
+@preprocessor stylus
 
+==/UserStyle== */
+
+/* 
 By: J. Scott Elblein / GeekDrop.com
 
 TODO:
@@ -10,7 +22,8 @@ TODO:
 - Finish the Login box. 5px bord-rad, input backgrounds, and icon backgrounds.
 - Swap Button background colors(?). i.e. the "text/tree" buttons on the Inspect pages)
 - Buttons still need work all voer the place, incl. when hovered.
------------------------------------------------ */
+-----------------------------------------------
+*/
 
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 
