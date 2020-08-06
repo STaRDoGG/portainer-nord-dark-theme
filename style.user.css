@@ -5,27 +5,13 @@
 @homepageURL  https://github.com/STaRDoGG/portainer-nord-dark-theme
 @supportURL   https://github.com/STaRDoGG/portainer-nord-dark-theme/issues
 @updateURL    https://raw.githubusercontent.com/STaRDoGG/portainer-nord-dark-theme/master/style.user.css
-@author       STaRDoGG
-@version      1.0.0
+@author       ThE STaRDoGG CHaMPioN | J. Scott Elblein | GeekDrop.com
+@version      1.0.1
 @preprocessor stylus
-
 ==/UserStyle== */
-
-/* 
-By: J. Scott Elblein / GeekDrop.com
-
-TODO:
-- Templates Page: Search Bar needs work. Particularly the colors when clicked in/on.
-- Templates page: Select cat. drop-down needs work.
-- Users Page: The white things on the input fields are too bright.
-- Exec Console needs work. (when clicking it's icon on a container in the list)
-- Finish the Login box. 5px bord-rad, input backgrounds, and icon backgrounds.
-- Swap Button background colors(?). i.e. the "text/tree" buttons on the Inspect pages)
-- Buttons still need work all voer the place, incl. when hovered.
------------------------------------------------
-*/
-
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@-moz-document regexp("(http|https):\/\/.*(?<!(http|https):\/\/.*\..*\/.*\/)(?<!\?.*)portainer.*") {
+/* The above regex will theme URLs at portainer.example.com and example.com/portainer. It has built in checking to block false positives like example.com/example/portainer or example.com/example?portainer */
 
 body {
     background: #292D3E;
@@ -517,7 +503,6 @@ code {
 .sidebar-footer-content .version, .fa.fa-eye-slash, .fa.fa-eye { color: #EBCB8B; }
 
 /* Table header in Services list. Could probably trim down this long selector but I'm being lazy right now. :p
-
 TODO: change these colors, including the hover colors */
 service-tasks-datatable > div > table > thead {
     background-color: #292d3e !important;
@@ -537,17 +522,14 @@ service-tasks-datatable > div {
 .CodeMirror-selected {
     background: red;
 }
-
 .CodeMirror-focused .CodeMirror-selected {
     background: red;
 }
-
 .CodeMirror-line::selection,
 .CodeMirror-line>span::selection,
 .CodeMirror-line>span>span::selection {
     background: red;
 }
-
 .CodeMirror-line::-moz-selection,
 .CodeMirror-line>span::-moz-selection,
 .CodeMirror-line>span>span::-moz-selection {
@@ -555,3 +537,4 @@ service-tasks-datatable > div {
 } */
 
 #toast-container { z-index: 0; }
+}
