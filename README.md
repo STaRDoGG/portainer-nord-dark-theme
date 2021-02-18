@@ -12,6 +12,10 @@ There are rumblings of having this theme added right into Portainer as a selecta
 
 Until it is (maybe) added directly into Portainer itself, you'll need to use a browser extension to enable this theme, such as [Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en-US) or [Stylish](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=en), and then paste this CSS into it as a new style.
 
+## UserCSS Installation
+
+📦 [Install the UserCSS](https://github.com/STaRDoGG/portainer-nord-dark-theme/raw/master/style.user.css)
+
 **Side Note**
 
 I got all of the selectors from the Chrome inspector; chances are likely a real CSS guru will spot ways to merge and optimize them; I welcome that.
