@@ -6,7 +6,7 @@
 @supportURL   https://github.com/STaRDoGG/portainer-nord-dark-theme/issues
 @updateURL    https://raw.githubusercontent.com/STaRDoGG/portainer-nord-dark-theme/master/style.user.css
 @author       ThE STaRDoGG CHaMPioN | J. Scott Elblein | GeekDrop.com
-@version      1.0.1
+@version      1.0.2
 @preprocessor stylus
 ==/UserStyle== */
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
@@ -14,42 +14,48 @@
 /* The above regex will theme URLs at portainer.example.com and example.com/portainer. It has built in checking to block false positives like example.com/example/portainer or example.com/example?portainer */
 
 body {
-    background: #292D3E;
+    background:#292D3E;
     font-family: Rubik;
-    color: #b2bfdc !important;
+    color: #B2BFDC !important;
 }
 
 /* Latest News Banner */
 .motd-body {
-    background-color: #1b1e2b;
-    border: 2px solid #f0ad4e;
-    border: 2px solid #f0ad4e5c;
+    background-color: #1B1E2B;
+    border: 2px solid #F0AD4E;
+    border: 2px solid #F0AD4E5c;
     border-radius: 2px;
 }
 
 /* Login Panel: Begin */
 .panel-body {
-    background-color:#232f48;
-    border: 1px solid #1b1e2b
+    background-color:#232F48;
+    border: 1px solid #1B1E2B
 }
 
-.panel-default {border-color: #2d3e63;}
-.panel {background-color: #2d3e63;}
+.panel-default { border-color: #2D3E63; }
+.panel         { background-color: #2D3E63; }
 /* End*/
 
+/* NEW: User Name + Icon */
+.user-box {
+    color: #A3BE8C;
+    margin-bottom: 5px;
+}
+
 /* Sidebar: Begin */
-.sidebar-header a {color: #D8DEE9;}
+.sidebar-header a { color: #D8DEE9; }
 
 ul.sidebar .sidebar-list a.active {
     color: #E5E9F0;
     border-left: 3px solid #E5E9F0;
-    background: #2d3e63;
+    background: #2D3E63;
 }
 
-ul.sidebar .sidebar-title.endpoint-name {color: #EBCB8B;}
+ul.sidebar .sidebar-title.endpoint-name { color: #EBCB8B; }
 
 ul.sidebar .sidebar-title {
-    border-bottom: 1px solid #292d3e;
+    border-bottom: 1px solid #292D3E;
     margin: 1.1em 0 0 0;
 }
 
@@ -71,11 +77,11 @@ ul.sidebar .sidebar-list a:hover {
 }
 
 .btn-primary:hover {
-    background-color: #30426a;
+    background-color: #30426A;
     /* border-color: #81A1C1; */
 }
 
-.btn-danger:hover {border-color: #cc6b69;}
+.btn-danger:hover { border-color: #cc6b69; }
 
 .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
     color: #E5E9F0;
@@ -101,99 +107,102 @@ ul.sidebar .sidebar-list a:hover {
 .btn-default {
     color: #E5E9F0;
     background-color: #5E81AC;
-    border-color: #30426a;
+    border-color: #30426A;
 }
 
 /* Search Box 'Button': Begin */
 .btn-default:hover {
-    color: #30426a;
-    background-color: #1b1e2b;
+    color: #30426A;
+    background-color: #1B1E2B;
 }
+
+/* X button on popup dialogs */
+.close { color: #fff; }
 /* End */
 
 /* Drop-down Menus */
 .dropdown-menu {
     /* font-size: 1em; */
-    background-color: #1b1e2b;
+    background-color: #1B1E2B;
     border: 1px solid rgb(48, 66, 106);
 }
 
 /* Text color inside of the drop-down menus. (i.e. popup settings boxes) */
-.tableMenu {color: unset;}
+.tableMenu { color: unset; }
 
 /* Pagination: Begin */
 .pagination>li>a, .pagination>li>span {
-    color: #5e81ac;
-    background-color: #232f48;
-    border: 1px solid #232f48;
+    color: #5E81AC;
+    background-color: #232F48;
+    border: 1px solid #232F48;
 }
 
 /* Selected */
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
     color: #E5E9F0;
-    background-color: #1b1e2b;
-    border-color: #232f48;
+    background-color: #1B1E2B;
+    border-color: #232F48;
 }
 
 /* Hovered */
 .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
     z-index: 1;
     color: #E5E9F0;
-    background-color: #30426a;
-    border-color: #232f48;
+    background-color: #30426A;
+    border-color: #232F48;
 }
 
 /* Disabled */
 .pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
-    color: #1b1e2b;
-    background-color: #232f48;
-    border-color: #232f48;
+    color: #1B1E2B;
+    background-color: #232F48;
+    border-color: #232F48;
 }
 /* End */
 
 /* Stacks page, Tab: Begin */
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
     color: #E5E9F0;
-    background-color: #1b1e2b;
-    border: 1px solid #30426a;
+    background-color: #1B1E2B;
+    border: 1px solid #30426A;
 }
 
 .nav>li>a:focus, .nav>li>a:hover {
     text-decoration: none;
-    background-color: #30426a;
-    border: 1px solid #1b1e2b;
+    background-color: #30426A;
+    border: 1px solid #1B1E2B;
 }
 
 /* Keep the bottom line the same color at all times */
 .nav-tabs,
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover,
 .nav>li>a:focus, .nav>li>a:hover {
-    border-bottom: 1px solid #30426a;
+    border-bottom: 1px solid #30426A;
 }
 /* End */
 
 /* Big boxy things ...: Begin */
 .boxselector_wrapper input[type=radio]:checked+label {
-    background: #30426a;
+    background: #30426A;
     color: #E5E9F0;
-    border-color: #1b1e2b;
+    border-color: #1B1E2B;
 }
 
 .boxselector_wrapper label {
     background: #1c2538;
-    border: 1px solid #30426a;
+    border: 1px solid #30426A;
     -webkit-box-shadow: unset;
     box-shadow: unset;
 }
 
 .boxselector_wrapper input[type=radio]:checked+label:after {
-    color: #5e81ac;
-    border: 2px solid #5e81ac;
+    color: #5E81AC;
+    border: 2px solid #5E81AC;
     background: #E5E9F0;
 }
 
 /* Stop that weird bouncing when selecting these */
-boxselector_wrapper label {padding: 20px 10px 0;}
+boxselector_wrapper label { padding: 20px 10px 0; }
 /* End */
 
 .row.header {
@@ -219,9 +228,9 @@ boxselector_wrapper label {padding: 20px 10px 0;}
 }
 
 .datatable .searchBar {
-    border-top: 1px dashed #1b1e2b !important;
-    border-bottom: 1px dashed #1b1e2b;
-    background-color: #252a3c;
+    border-top: 1px dashed #1B1E2B !important;
+    border-bottom: 1px dashed #1B1E2B;
+    background-color: #252A3C;
 }
 
 a {
@@ -244,48 +253,50 @@ a.ng-binding.ng-scope {
 /* 1 Place this is used is the search bar 'button' on the Templates page ...*/
 .form-control, output {
     color: #5E81AC;
-    border: 1px solid #232f48 !important;
+    border: 1px solid #232F48 !important;
     border-radius: 5px;
 }
 
 .widget {
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    background: #232f48;
-    border: 1px solid #1b1e2b;
+    background: #232F48;
+    border: 1px solid #1B1E2B;
     border-radius: 5px;
-    /*border-color: #e9e9e9;*/
+    /*border-color: #E9E9E9;*/
 }
 
 .widget .widget-header {
-    color: #b2bfdc;
-    background-color: #232f48;
+    color: #B2BFDC;
+    background-color: #232F48;
     padding: 10px 15px;
-    border-bottom: 1px solid #e9e9e9;
+    border-bottom: 1px solid #E9E9E9;
     line-height: 30px;
 }
 
 /* Text in table headers */
-.widget .widget-body table thead * {color: #ECEFF4;}
+.widget .widget-body table thead * { color: #ECEFF4; }
 
 /* TODO: Duped the above selector, but there are a cpl changes here.
    Designed the above on the Home tab, then the below on the Dashboard tab,
    and haven't throughougly gone through testing what it all affects. */
 .widget .widget-header {
-    background-color: #30426a;
-    border-bottom: 1px solid #292d3e;
+    background-color: #30426A;
+    border-bottom: 1px solid #292D3E;
     border-radius: 5px 5px 0 0;
 }
 
-.text-muted {color: #bf7449;}
+.text-muted { color: #bf7449; }
 
 .widget .widget-body table thead {
-    /* background: #232f48; */
-    background: #1b1e2b;
+    /* background: #232F48; */
+    background: #1B1E2B;
 }
 
+.widget .widget-footer { border-top: 1px solid #31426a; }
+    
 .blocklist-item {
-    border: 1px solid #1b1e2b;
+    border: 1px solid #1B1E2B;
     margin: 10px 0;
     -webkit-box-shadow: unset;
     box-shadow: unset;
@@ -293,7 +304,7 @@ a.ng-binding.ng-scope {
 
 /* Hovered Items in Block Lists, i.e. Endpoints List */
 .blocklist-item--selected, .blocklist-item:hover {
-    background-color: #2d3e63;
+    background-color: #2D3E63;
     color: #E5E9F0;
 }
 
@@ -302,11 +313,12 @@ a.ng-binding.ng-scope {
     margin-right: 5px;
 }
 
+
 /* Endpoint Detals page: Begin */
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control { background-color: #30426a; }
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control { background-color: #30426A; }
     
 /* Tags dropdown. TODO: Still needs work. */
-#tags { background-color: #1b1e2b !important; }
+#tags { background-color: #1B1E2B !important; }
 
 /**/
 .dropdown-menu>li>a { color: unset; }
@@ -314,38 +326,43 @@ a.ng-binding.ng-scope {
 /* Labels & Such: Begin */
 .label {
     color: #ECEFF4;
-    text-shadow: 1px 1px 1px #000000a6;
+    text-shadow: 1px 1px 1px #000000A6;
     letter-spacing: 1px;
 }
 
-.label-success {background-color: #A3BE8C;}
-.label-warning {background-color: #EBCB8B;}
-.label-default {background-color: #5E81AC;}
-.label-info    {background-color: #D08770;}
+.label-success { background-color: #A3BE8C; }
+.label-warning { background-color: #EBCB8B; }
+.label-default { background-color: #5E81AC; }
+.label-info    { background-color: #D08770; }
 
 /* The Label-info on the Networks table */
-span.label.label-info.image-tag.space-left.ng-scope {float: right;}
+span.label.label-info.image-tag.space-left.ng-scope { float: right; }
 
 /* Special floating for the label on the Volumes & Images pages, for aethestics */
-span.label.label-warning.image-tag.ng-scope {float: right;}
+span.label.label-warning.image-tag.ng-scope { float: right; }
 
-.label-danger, .btn-danger     {background-color: #BF616A;}
-.label-primary, .btn-primary   {background-color: #5E81AC;}
-.fa.green-icon                 {color: #A3BE8C;}
-.fa.red-icon, .text-danger     {color: #BF616A;}
-.fa.orange-icon, .text-warning {color: #D08770;}
+.label-danger, .btn-danger     { background-color: #BF616A; }
+.label-primary, .btn-primary   { background-color: #5E81AC; }
+.fa.green-icon                 { color: #A3BE8C; }
+.fa.red-icon, .text-danger     { color: #BF616A; }
+.fa.orange-icon, .text-warning { color: #D08770; }
 
 /* For 'healthy' containers in the Containers list, add a lil more spice */
 span.label.label-success.interactive {
     color: #fbe1ad!important;
-    text-shadow: 1px 1px 1px #000000a6!important;
+    text-shadow: 1px 1px 1px #000000a6 !important;
 }
 
 /* "Filter" text on colunmn headers */
-.widget .widget-body table thead th .table-filter {color: #EBCB8B;}
+.widget .widget-body table thead th .table-filter { color: #EBCB8B; }
 
 /* i.e. The circular icons on the Dashboard page */
-.blue {background: #1b1e2b!important;}
+.blue {
+    background: #31426A !important;
+    border: 1px solid #1c1e2b;
+    border-radius: 20px !important;
+}
+/* .blue { background: #1B1E2B !important; } */
 /* End */
 
 .form-control {
@@ -354,7 +371,7 @@ span.label.label-success.interactive {
     padding: 6px 12px;
     background-color: #1B1E2B;
     background-image: none;
-    border: 1px solid #ccc; /* hmmmm .... */
+    border: 1px solid #CCC; /* hmmmm .... */
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
@@ -369,17 +386,17 @@ span.label.label-success.interactive {
     font-size: 14px;
     line-height: 1.42857143;
     /* color: #337ab7; */
-    color: #5e81ac;
+    color: #5E81AC;
 }
 
-.table .table {background-color: rgba(0,0,0,.25);}
+.table .table { background-color: rgba(0,0,0,.25); }
 
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {border-top: 1px solid #30426a;}
-.table>thead>tr>th {border-bottom: 2px solid #1b1e2b;}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th { border-top: 1px solid #30426A; }
+.table>thead>tr>th { border-bottom: 2px solid #1B1E2B; }
 
 /* Background hover color for table items */
 .table-hover>tbody>tr:hover, .table>tbody>tr.active>td, .table>tbody>tr.active>th, .table>tbody>tr>td.active, .table>tbody>tr>th.active, .table>tfoot>tr.active>td, .table>tfoot>tr.active>th, .table>tfoot>tr>td.active, .table>tfoot>tr>th.active, .table>thead>tr.active>td, .table>thead>tr.active>th, .table>thead>tr>td.active, .table>thead>tr>th.active {
-    background-color: #2d3e63;
+    background-color: #2D3E63;
 }
 
 /* Background hover color for actively hovered table items */
@@ -389,16 +406,16 @@ span.label.label-success.interactive {
 
 /* Table item borders */
 .table-bordered, .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
-    border: 1px solid #232f48;
+    border: 1px solid #232F48;
 }
 
 /* i.e. As seen in the popup Settings boxes */
-.tableMenu .menuContent {border-bottom: 1px solid #232f48;}
-.datatable .toolBar .setting-active {color: #30426a;}
+.tableMenu .menuContent {border-bottom: 1px solid #232F48;}
+.datatable .toolBar .setting-active {color: #30426A;}
 
 .form-section-title {
     color: unset;
-    border-bottom: 1px solid #2d3e63;
+    border-bottom: 1px solid #2D3E63;
     margin-top: unset;
     padding-bottom: 1em;
 }
@@ -406,10 +423,10 @@ span.label.label-success.interactive {
 #view > information-panel > div > div > rd-widget > div > rd-widget-body > div > div > div.form-group.ng-scope > ng-transclude > span,
 #view > div:nth-child(3) > div > rd-widget > div > rd-widget-body > div > div > form > div:nth-child(2) > div > span {color: #D8DEE9;}
 
-json-tree {color: unset;}
+json-tree { color: unset; }
 
 /* Colored text on the Roles page.*/
-.portainer-disabled-datatable {color: #1b1e2b;}
+.portainer-disabled-datatable { color: #1B1E2B; }
 
 /* Sliders/Switches: Begin */
 .bootbox-form .checkbox i, .switch i {
@@ -419,15 +436,15 @@ json-tree {color: unset;}
 
 /* When switched on ... */
 .bootbox-form .checkbox :checked~i, .switch :checked+i {
-    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #8a97b3;
-    box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #b2bfdc;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #8A97B3;
+    box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #B2BFDC;
 }
 /* End */
 
 /* Styled for the "text" view on the Inspect page; haven't fully looked to see if that fucked up anything else yet. MAY need to isolate it. */
 pre {
-    color: #b2bfdc;
-    background-color: #232f48;
+    color: #B2BFDC;
+    background-color: #232F48;
     border: unset;
     border-radius: unset;
 }
@@ -436,47 +453,49 @@ pre {
 /*
 pre {
     color: #333;
-    background-color: #f5f5f5;
-    border: 1px solid #30426a;
+    background-color: #F5F5F5;
+    border: 1px solid #30426A;
     border-radius: 5px;
 }
 */
 
 .log_viewer {
     color: #D8DEE9;
-    background-color: #1b1e2b;
+    background-color: #1B1E2B;
     font-size: .75em;
-    border: 1px solid #30426a;
+    border: 1px solid #30426A;
     border-radius: 5px;
 }
 
 /* Highlighted line(s) in log viewer */
 .log_viewer .line_selected {
-    background-color: #2d3e63;
-    border-left: 3px solid #f0ad4e;
+    background-color: #2D3E63;
+    border-left: 3px solid #F0AD4E;
 }
 /* End */
 
 /* As seen in the Container details section */
 code {
     color: #BF616A;
-    background-color: #1a2336;
+    background-color: #1A2336;
     padding: 4px 5px 4px 5px !important;
 }
 
 /* Code Editor */
 
-/* Allow expanding the code area vertically (as well as the lov viewer area) */
+/* Allow expanding the code area vertically (as well as the log viewer area) */
 .CodeMirror { background: #ECEFF4; }
 
-.CodeMirror, .log_viewer {
-    min-height: 300px;
+/* NEW: BUG: Supposed to allow re-sizing he terminal window, but not having any effect. */
+.CodeMirror, .log_viewer, .xterm-viewport {
+    min-height: 510px;
     resize: vertical;
-    overflow: auto !important;
+    overflow-x: auto;
 }
 
-.CodeMirror-linenumber { color: #D08770; }
-.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler {  background-color: #ECEFF4; }
+.CodeMirror-linenumber                                  { color: #D08770; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: #ECEFF4; }
+.CodeMirror-selected                                    { background:#CCCCCC; }
 
 .CodeMirror-gutters {
     border-right: 1px solid #D08770;
@@ -484,52 +503,61 @@ code {
 }
 
 /* Bar under 'Search' when on Templates page */
-.searchBar ng-scope {border-bottom: 2px solid #30426a;}
+.searchBar ng-scope {border-bottom: 2px solid #30426A;}
 
 /* NOT FINISHED: Dialogs: i.e. When deleting a container and it asks if you also want to delete non-persistant volumes */
-.modal-content { background-color: #a94442; }
-.modal-title { color: #ECEFF4; }
-.modal-header { border-bottom: 1px solid #733b3b }
-.modal-footer { border-top: 1px solid #733b3b; }
+.modal-content { background-color: #A94442; }
 
+.modal-title {
+    color: #ECEFF4;
+    font-style: italic;
+    font-size: larger;
+}
+
+/* NEW: Added more style to the confirm dialog */
+.modal-header {
+    background-color: #79282F;
+    border-bottom: 1px solid #733B3B;
+    border-radius: 5px 5px 0 0;
+}
+
+.modal-footer                      { border-top: 1px solid #733B3B; }
 .bootbox-form label, .bootbox-body { color: #ECEFF4; }
 
 .bootbox-form .checkbox :checked~i, .switch :checked+i {
-    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #bf616a;
-    box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #bf616a;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #BF616A;
+    box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #BF616A;
 }
 
 /* Footer Version Number, and the 'eye' icons (i.e. 'administrators' text in tables.) */
 .sidebar-footer-content .version, .fa.fa-eye-slash, .fa.fa-eye { color: #EBCB8B; }
 
 /* Table header in Services list. Could probably trim down this long selector but I'm being lazy right now. :p
+
 TODO: change these colors, including the hover colors */
-service-tasks-datatable > div > table > thead {
-    background-color: #292d3e !important;
-}
+service-tasks-datatable > div > table > thead { background-color: #292D3E !important; }
 
-/* The table body for the above */
-service-tasks-datatable > div > table > tbody {
-    background-color: #30426a !important;
-}
+/* Table body for the above */
+service-tasks-datatable > div > table > tbody { background-color: #30426A !important; }
 
-/* The table border for the above */
-service-tasks-datatable > div {
-    background-color: #30426a !important;
-}
+/* Table border for the above */
+service-tasks-datatable > div { background-color: #30426A !important; }
 
 /* TESTING: trying to change background of selected text. these aren't working
 .CodeMirror-selected {
     background: red;
 }
+
 .CodeMirror-focused .CodeMirror-selected {
     background: red;
 }
+
 .CodeMirror-line::selection,
 .CodeMirror-line>span::selection,
 .CodeMirror-line>span>span::selection {
     background: red;
 }
+
 .CodeMirror-line::-moz-selection,
 .CodeMirror-line>span::-moz-selection,
 .CodeMirror-line>span>span::-moz-selection {
@@ -537,4 +565,24 @@ service-tasks-datatable > div {
 } */
 
 #toast-container { z-index: 0; }
+
+/* NEW: Update Notification Banner (at bottom left) */
+.sidebar-footer-content .update-notification { background-color: #D08770; }
+
+.fa-cloud-download-alt:before, .update-notification.ng-scope > a { color: #ECEFF4 !important; }
+
+/* #loadingbar-placeholder TESTING */
+#loadingbar { color: #EBCB8B; }
+
+/* The things that look like buttons but aren't buttons */
+.input-group-addon {
+    color: unset;
+    background-color: #5E81AC;
+    border: unset;
 }
+
+/* The Linux/Windows icon when connecting to the shell */
+.boxselector_header .fa, .fab { color: #ECEFF4; }
+
+/* As seen on the Service details page, for example. */
+hr { border-top: 1px solid #D08770; }
