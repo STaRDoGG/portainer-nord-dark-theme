@@ -10,7 +10,7 @@
 @preprocessor stylus
 ==/UserStyle== */
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
-@-moz-document regexp("(http|https):\/\/.*(?<!(http|https):\/\/.*\..*\/.*\/)(?<!\?.*)portainer.*") {
+@-moz-document regexp("https?:\/\/.*(?<!github.*)(?<!https?:\/\/.*\..*\/.*\/)(?<!\?.)portainer.*") {
 /* The above regex will theme URLs at portainer.example.com and example.com/portainer. It has built in checking to block false positives like example.com/example/portainer or example.com/example?portainer */
 
 body {
