@@ -6,22 +6,207 @@
 @supportURL   https://github.com/STaRDoGG/portainer-nord-dark-theme/issues
 @updateURL    https://raw.githubusercontent.com/STaRDoGG/portainer-nord-dark-theme/master/style.user.css
 @author       ThE STaRDoGG CHaMPioN | J. Scott Elblein | GeekDrop.com
-@version      1.0.2
+@version      1.0.3
 @preprocessor stylus
 ==/UserStyle== */
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 @-moz-document regexp("https?:\/\/.*(?<!github.*)(?<!https?:\/\/.*\..*\/.*\/)(?<!\?.)portainer.*") {
 /* The above regex will theme URLs at portainer.example.com and example.com/portainer. It has built in checking to block false positives like example.com/example/portainer or example.com/example?portainer */
 
+/* ------------------------------------------------------------------------------------------
+   -
+   - Dark Portainer UI
+   -
+   - Last Updated: 11/14/2021
+   -
+   - NEW:
+   -   Changes to match the latest Portainer's new CSS variable format. (some)
+   -
+   - TODO:
+   -   Templates Page: Search Bar needs work. Particularly the colors when clicked in/on.
+   -   Templates page: Select cat. drop-down needs work.
+   -   Users Page: The white things on the input fields are too bright.
+   -   Exec Console needs work. (when clicking it's icon on a container in the list)
+   -   Finish the Login box. 5px bord-rad, input backgrounds, and icon backgrounds.
+   -   Swap Button background colors(?). i.e. the "text/tree" buttons on the Inspect pages)
+   -   Buttons still need work all over the place, incl. when hovered.
+   -
+   -----------------------------------------------------------------------------------------
+*/
+
+/* Vars */
+:root {
+  --bg-card-color: #1B1E2B;
+  --bg-main-color: #1B1E2B;
+    /*  --bg-body-color: var(--grey-9);
+    --bg-checkbox-border-color: var(--grey-49);
+    --bg-sidebar-color: var(--grey-37);
+    --bg-sidebar-header-color: var(--grey-37);
+    --bg-widget-color: var(--white-color);
+    --bg-widget-header-color: var(--grey-10);
+    --bg-widget-table-color: var(--grey-13);
+    --bg-header-color: var(--white-color);
+    --bg-hover-table-color: var(--grey-14);
+    --bg-switch-box-color: var(--white-color); */
+    --bg-input-group-addon-color: #5E81AC;
+    /*--bg-btn-default-color: var(--white-color);
+    --bg-blocklist-hover-color: var(--grey-12);
+    --bg-boxselector-color: var(--white-color);
+    --bg-table-color: var(--white-color);
+    --bg-md-checkbox-color: var(--grey-12); */
+    --bg-form-control-disabled-color: #30426A;
+    /*--bg-modal-content-color: var(--white-color);
+    --bg-code-color: var(--grey-15);
+    --bg-navtabs-color: var(--white-color);
+    --bg-navtabs-hover-color: var(--grey-16);
+    --bg-table-selected-color: var(--grey-14);
+    --bg-codemirror-gutters-color: var(--grey-17);
+    --bg-dropdown-menu-color: var(--white-color);
+    --bg-log-viewer-color: var(--white-color);
+    --bg-log-line-selected-color: var(--grey-18);
+    --bg-pre-color: var(--grey-14);
+    --bg-blocklist-item-selected-color: var(--grey-12);
+    --bg-progress-color: var(--grey-14);
+    --bg-pagination-color: var(--white-color);
+    --bg-pagination-span-color: var(--white-color);
+    --bg-pagination-hover-color: var(--grey-11);
+    --bg-ui-select-hover-color: var(--grey-14); */
+    --bg-motd-body-color: #1B1E2B;
+    /* --bg-item-highlighted-color: var(--grey-21);
+    --bg-item-highlighted-null-color: var(--grey-14);
+    --bg-row-header-color: var(--white-color);
+    --bg-multiselect-checkbox-color: var(--white-color);
+    --bg-sidebar-wrapper-color: var(--blue-5);*/
+    --bg-panel-body-color: #232F48;
+    /*--bg-codemirror-color: var(--white-color);
+    --bg-codemirror-selected-color: var(--grey-22);
+    --bg-multiselect-color: var(--white-color);
+    --bg-daterangepicker-color: var(--white-color);
+    --bg-calendar-color: var(--white-color);
+    --bg-calendar-table-color: var(--white-color);
+    --bg-daterangepicker-end-date: var(--white-color);
+    --bg-daterangepicker-hover: var(--grey-16);
+    --bg-daterangepicker-in-range: var(--grey-58);
+    --bg-daterangepicker-active: var(--blue-14);
+    --bg-tooltip-color: var(--white-color);
+    --bg-input-autofill-color: var(--white-color);
+    --bg-btn-default-hover-color: var(--grey-59);
+    --bg-btn-focus: var(--grey-59);
+    --bg-boxselector-disabled-color: var(--white-color);
+    --bg-small-select-color: var(--white-color);
+    --bg-app-datatable-thead: var(--grey-23);
+    --bg-app-datatable-tbody: var(--grey-24);
+    --text-main-color: var(--grey-7);
+    --text-body-color: var(--grey-6);
+    --text-sidebar-title-color: var(--blue-3);
+    --text-widget-header-color: var(--grey-7);
+    --text-form-control-color: var(--grey-25); */
+    --text-muted-color: #bf7449;
+    /*--text-link-color: var(--blue-2);
+    --text-link-hover-color: var(--blue-4);
+    --text-input-group-addon-color: var(--grey-25);
+    --text-btn-default-color: var(--grey-6);
+    --text-blocklist-hover-color: var(--grey-37);
+    --text-dashboard-item-color: var(--grey-32);
+    --text-danger-color: var(--red-1);
+    --text-code-color: var(--red-2);
+    --text-navtabs-color: var(--grey-25);
+    --text-form-section-title-color: var(--grey-26);
+    --text-cm-default-color: var(--blue-1);
+    --text-cm-meta-color: var(--black-color);
+    --text-cm-string-color: var(--red-3);
+    --text-cm-number-color: var(--green-1);
+    --text-codemirror-color: var(--black-color);
+    --text-dropdown-menu-color: var(--grey-6);
+    --text-log-viewer-color: var(--black-color);
+    --text-json-tree-color: var(--blue-3);
+    --text-json-tree-leaf-color: var(--blue-5);
+    --text-json-tree-branch-preview-color: var(--blue-5);
+    --text-pre-color: var(--grey-6);
+    --text-blocklist-item-selected-color: var(--grey-37);
+    --text-progress-bar-color: var(--grey-27);
+    --text-pagination-color: var(--grey-26);
+    --text-pagination-span-color: var(--blue-2);
+    --text-pagination-span-hover-color: var(--blue-4);
+    --text-ui-select-color: var(--grey-6);
+    --text-ui-select-hover-color: var(--grey-28);
+    --text-summary-color: var(--black-color);
+    --text-multiselect-button-color: var(--grey-29);
+    --text-multiselect-item-color: var(--grey-30);
+    --text-sidebar-list-color: var(--grey-56);
+    --text-rzslider-color: var(--grey-36);
+    --text-rzslider-limit-color: var(--grey-36);
+    --text-daterangepicker-end-date: var(--grey-57);
+    --text-daterangepicker-in-range: var(--black-color);
+    --text-daterangepicker-active: var(--white-color);
+    --text-tooltip-color: var(--grey-6);
+    --text-input-autofill-color: var(--black-color);
+    --text-button-hover-color: var(--grey-6);
+    --text-small-select-color: var(--grey-25);
+    --border-color: var(--grey-42);
+    --border-widget-color: var(--grey-43);
+    --border-sidebar-color: var(--white-color); */
+    --border-form-control-color: #CCC;
+    /*--border-table-color: var(--grey-19);
+    --border-table-top-color: var(--grey-19); */
+    --border-datatable-top-color: #1B1E2B;
+    /*--border-blocklist-color: var(--grey-44) ccc;
+    --border-input-group-addon-color: var(--grey-44);
+    --border-btn-default-color: var(--grey-44);
+    --border-boxselector-color: var(--grey-6);
+    --border-md-checkbox-color: var(--grey-19);
+    --border-modal-header-color: var(--grey-45);
+    --border-navtabs-color: var(--grey-19);
+    --border-form-section-title-color: var(--grey-26);
+    --border-codemirror-cursor-color: var(--black-color);
+    --border-codemirror-gutters-color: var(--grey-19);
+    --border-pre-color: var(--grey-43);
+    --border-blocklist-item-selected-color: var(--grey-46);
+    --border-pagination-color: var(--grey-19);
+    --border-pagination-span-color: var(--grey-19);
+    --border-pagination-hover-color: var(--grey-19);
+    --border-multiselect-button-color: var(--grey-48);
+    --border-searchbar-color: var(--grey-10);
+    --border-panel-color: var(--white-color);
+    --border-daterangepicker-color: var(--grey-19);
+    --border-calendar-table: var(--white-color);
+    --border-daterangepicker: var(--grey-19);
+    --border-pre-next-month: var(--black-color);
+    --border-daterangepicker-after: var(--white-color);
+    --border-tooltip-color: var(--grey-47);
+    --border-modal: 0px;
+    --hover-sidebar-color: var(--grey-37);
+    --shadow-box-color: 0 3px 10px -2px var(--grey-50);
+    --shadow-boxselector-color: 0 3px 10px -2px var(--grey-50);
+    --blue-color: var(--blue-13);
+    --button-close-color: var(--black-color);
+    --button-opacity: 0.2;
+    --button-opacity-hover: 0.5;
+    --bg-boxselector-wrapper-color: var(--grey-6);
+    --bg-image-multiselect: linear-gradient(var(--blue-2),var(--blue-2));
+    --bg-image-multiselect-button: linear-gradient(var(--white-color),var(--grey-17));
+    --bg-image-multiselect-hover: linear-gradient(var(--white-color),var(--grey-43));
+    --border-multiselect: var(--grey-48);
+    --border-multiselect-checkboxlayer: var(--grey-51);
+    --text-multiselect: var(--grey-29);
+    --text-multiselect-selectitem: var(--white-color);
+    --bg-multiselect-checkboxcontainer: var(--white-color);
+    --text-multiselect-item: var(--grey-30);
+    --bg-multiselect-helpercontainer: var(--white-color);
+    --text-input-textarea: var(--white-color); */
+    --bg-service-datatable-thead: #292D3E;
+    /* --bg-service-datatable-tbody: var(--grey-24); */
+}
+
 body {
-    background:#292D3E;
+    background: #292D3E;
     font-family: Rubik;
     color: #B2BFDC !important;
 }
 
 /* Latest News Banner */
 .motd-body {
-    background-color: #1B1E2B;
+    background-color: var(--bg-motd-body-color, #1B1E2B);
     border: 2px solid #F0AD4E;
     border: 2px solid #F0AD4E5c;
     border-radius: 2px;
@@ -29,15 +214,15 @@ body {
 
 /* Login Panel: Begin */
 .panel-body {
-    background-color:#232F48;
+    background-color: var(--bg-panel-body-color, #232F48);
     border: 1px solid #1B1E2B
 }
 
 .panel-default { border-color: #2D3E63; }
 .panel         { background-color: #2D3E63; }
-/* End*/
+/* End */
 
-/* NEW: User Name + Icon */
+/* User Name + Icon */
 .user-box {
     color: #A3BE8C;
     margin-bottom: 5px;
@@ -212,8 +397,9 @@ boxselector_wrapper label { padding: 20px 10px 0; }
 }
 
 .datatable .footer {
-    background-color: #1B1E2B;
+    background-color: var(--bg-card-color), #1B1E2B);
     border-radius: 0 0 5px 5px;
+    border-top: var(--border-datatable-top-color, #1B1E2B);
     color: #D8DEE9;
 }
 
@@ -286,7 +472,7 @@ a.ng-binding.ng-scope {
     border-radius: 5px 5px 0 0;
 }
 
-.text-muted { color: #bf7449; }
+.text-muted { color: var(--text-muted-color, #bf7449); }
 
 .widget .widget-body table thead {
     /* background: #232F48; */
@@ -315,7 +501,7 @@ a.ng-binding.ng-scope {
 
 
 /* Endpoint Detals page: Begin */
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control { background-color: #30426A; }
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control { background-color: var(--bg-form-control-disabled-color,#30426A); }
     
 /* Tags dropdown. TODO: Still needs work. */
 #tags { background-color: #1B1E2B !important; }
@@ -347,6 +533,12 @@ span.label.label-warning.image-tag.ng-scope { float: right; }
 .fa.red-icon, .text-danger     { color: #BF616A; }
 .fa.orange-icon, .text-warning { color: #D08770; }
 
+/* TODO: Disabled for now because they break the hover color for some reason (a:hover) */
+/*.fa-file-alt                   { color: #EBCB8B; }  Logs */
+/*.fa-info-circle                { color: #B48EAD; }  Info */
+/*.fa-chart-area                 { color: #A3BE8C; }  Chart/Stats */
+/*.fa-terminal                   { color: #D08770; }  Terminal */
+
 /* For 'healthy' containers in the Containers list, add a lil more spice */
 span.label.label-success.interactive {
     color: #fbe1ad!important;
@@ -354,7 +546,7 @@ span.label.label-success.interactive {
 }
 
 /* "Filter" text on colunmn headers */
-.widget .widget-body table thead th .table-filter { color: #EBCB8B; }
+.widget .widget-body table thead th .table-filter { color:#EBCB8B; }
 
 /* i.e. The circular icons on the Dashboard page */
 .blue {
@@ -369,9 +561,9 @@ span.label.label-success.interactive {
     width: 100%;
     height: 34px;
     padding: 6px 12px;
-    background-color: #1B1E2B;
+    background-color: var(--bg-main-color,#1B1E2B);
     background-image: none;
-    border: 1px solid #CCC; /* hmmmm .... */
+    border: 1px solid var(--border-form-control-color,#CCC); /* hmmmm .... */
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
@@ -532,10 +724,17 @@ code {
 /* Footer Version Number, and the 'eye' icons (i.e. 'administrators' text in tables.) */
 .sidebar-footer-content .version, .fa.fa-eye-slash, .fa.fa-eye { color: #EBCB8B; }
 
+/* NEW: Service Details Page: Begin */
+
+/* Add a little space between env var items */
+.env-item .env-item-value { margin-bottom: 5px; }
+
+/* End */
+
 /* Table header in Services list. Could probably trim down this long selector but I'm being lazy right now. :p
 
 TODO: change these colors, including the hover colors */
-service-tasks-datatable > div > table > thead { background-color: #292D3E !important; }
+service-tasks-datatable > div > table > thead { background-color: var(--bg-service-datatable-thead, #292D3E) !important; }
 
 /* Table body for the above */
 service-tasks-datatable > div > table > tbody { background-color: #30426A !important; }
@@ -577,7 +776,7 @@ service-tasks-datatable > div { background-color: #30426A !important; }
 /* The things that look like buttons but aren't buttons */
 .input-group-addon {
     color: unset;
-    background-color: #5E81AC;
+    background-color: var(--bg-input-group-addon-color, #5E81AC);
     border: unset;
 }
 
@@ -586,3 +785,5 @@ service-tasks-datatable > div { background-color: #30426A !important; }
 
 /* As seen on the Service details page, for example. */
 hr { border-top: 1px solid #D08770; }
+
+.rzslider .rz-pointer { background-color: #A3BE8C;}
