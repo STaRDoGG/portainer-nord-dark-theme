@@ -6,7 +6,7 @@
 @supportURL   https://github.com/STaRDoGG/portainer-nord-dark-theme/issues
 @updateURL    https://raw.githubusercontent.com/STaRDoGG/portainer-nord-dark-theme/master/style.user.css
 @author       ThE STaRDoGG CHaMPioN | J. Scott Elblein | GeekDrop.com
-@version      1.0.3
+@version      1.0.4
 @preprocessor stylus
 ==/UserStyle== */
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
@@ -17,7 +17,7 @@
    -
    - Dark Portainer UI
    -
-   - Last Updated: 11/14/2021
+   - Last Updated: 03/18/2022
    -
    - NEW:
    -   Changes to match the latest Portainer's new CSS variable format. (some)
@@ -397,7 +397,7 @@ boxselector_wrapper label { padding: 20px 10px 0; }
 }
 
 .datatable .footer {
-    background-color: var(--bg-card-color), #1B1E2B);
+    background-color: var(--bg-card-color, #1B1E2B);
     border-radius: 0 0 5px 5px;
     border-top: var(--border-datatable-top-color, #1B1E2B);
     color: #D8DEE9;
