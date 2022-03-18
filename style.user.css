@@ -9,9 +9,10 @@
 @version      1.0.4
 @preprocessor stylus
 ==/UserStyle== */
+@-moz-document regexp("https?:\/\/.*(?<!github.*)(?<!https?:\/\/.*\..*\/.*\/)(?<!\?.)portainer.*")
+  /* The above regex will theme URLs at portainer.example.com and example.com/portainer. It has built in checking to block false positives like example.com/example/portainer or example.com/example?portainer */
+
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
-@-moz-document regexp("https?:\/\/.*(?<!github.*)(?<!https?:\/\/.*\..*\/.*\/)(?<!\?.)portainer.*") {
-/* The above regex will theme URLs at portainer.example.com and example.com/portainer. It has built in checking to block false positives like example.com/example/portainer or example.com/example?portainer */
 
 /* ------------------------------------------------------------------------------------------
    -
@@ -36,8 +37,8 @@
 
 /* Vars */
 :root {
-  --bg-card-color: #1B1E2B;
-  --bg-main-color: #1B1E2B;
+    --bg-card-color: #1B1E2B;
+    --bg-main-color: #1B1E2B;
     /*  --bg-body-color: var(--grey-9);
     --bg-checkbox-border-color: var(--grey-49);
     --bg-sidebar-color: var(--grey-37);
@@ -786,4 +787,4 @@ service-tasks-datatable > div { background-color: #30426A !important; }
 /* As seen on the Service details page, for example. */
 hr { border-top: 1px solid #D08770; }
 
-.rzslider .rz-pointer { background-color: #A3BE8C;}
+.rzslider .rz-pointer { background-color: #A3BE8C; }
